@@ -9,3 +9,21 @@ variable "name" {
     type = string 
     default = "my-cluster"
 }
+
+variable "scaling_config" {
+    description = "Map of EKS node group autoscaling configuration"
+    type = map(object({
+        desired_size    = number
+        max_size        = number
+        min_size        = number
+    }))
+    # set it to 0, 0, 0 to shut down all nodes
+    default = {
+        "default" = {
+            desired_size = 0
+            max_size = 1
+            min_size = 0
+        }  
+    }
+}
+

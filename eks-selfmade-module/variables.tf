@@ -11,4 +11,20 @@ variable "name" {
     default = "my-cluster"
 }
 
+variable "scaling_config" {
+    description = "Map of EKS node group autoscaling configuration"
+    type = map(object({
+        desired_size    = number
+        max_size        = number
+        min_size        = number
+    }))
+    default = {
+        "default" = {
+            desired_size = 1
+            max_size = 2
+            min_size = 1  
+        }
+
+    }
+}
 

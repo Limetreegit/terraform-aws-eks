@@ -5,3 +5,6 @@ Prerequisit to push a module to Terraform model registry
 2. Github repository name convention:
 terraform-<PROVIDER>-<MODULE_NAME>
 
+3. Actually, just push the module code to Github is good enough for terraform run. Maybe it's no need to push it official Terraform registry
+
+
